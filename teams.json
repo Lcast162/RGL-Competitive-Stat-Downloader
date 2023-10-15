@@ -1,0 +1,21 @@
+[
+  {
+    "team_name": "",
+    "team_wins": "",
+    "team_total_kills": "",
+    "team_total_damage": "",
+    "players" : [{
+      "player_name": "",
+      "most_played_class": "",
+      "total_kills": "",
+      "total_assists": "",
+      "total_deaths": "",
+      "total_damage": "",
+      "total_damage_taken": "",
+      "total_healing": "",
+      "total_charges": "",
+      "total_drops": "",
+      "caps": ""
+    }]
+  }
+]
