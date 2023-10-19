@@ -14,9 +14,23 @@ def get_player_steam_profile(player_url):
     return steam_link['href']
 
 
-def get_teams_table():
-    im_season_16_league_link = "https://rgl.gg/Public/LeagueTable?g=879&s=144&r=24"
-    league_html = requests.get(im_season_16_league_link)
+def get_teams_table(div):
+    season_16_league_link = "https://rgl.gg/Public/LeagueTable?g=879&s=144&r=24"
+    match div:
+        case "NC":
+            season_16_league_link = "https://rgl.gg/Public/LeagueTable?g=881&s=144&r=24"
+        case "AM":
+            season_16_league_link = "https://rgl.gg/Public/LeagueTable?g=880&s=144&r=24"
+        case "IM":
+            season_16_league_link = "https://rgl.gg/Public/LeagueTable?g=879&s=144&r=24"
+        case "MAIN":
+            season_16_league_link = "https://rgl.gg/Public/LeagueTable?g=878&s=144&r=24"
+        case "ADV":
+            season_16_league_link = "https://rgl.gg/Public/LeagueTable?g=877&s=144&r=24"
+        case "INVITE":
+            season_16_league_link = "https://rgl.gg/Public/LeagueTable?g=876&s=144&r=24"
+
+    league_html = requests.get(season_16_league_link)
     team_dict = {}
 
     if league_html.status_code == 200:
@@ -46,7 +60,7 @@ def get_match_logs(match_url):
 
         for match in match_logs:
             match_url = match['href'].split("#", 1)[0]
-            if "https://logs.tf" in match_url and match_url not in logs_dict.keys():
+            if "https://logs.tf" in match_url and "profile" not in match_url and match_url not in logs_dict.keys():
                 logs_dict[match_url] = 0
 
         return list(logs_dict.keys())
