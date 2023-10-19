@@ -1,6 +1,6 @@
 import run_tool
 
+divs_dict = {"Newcomer": "NC", "Amateur": "AM", "Intermediate": "IM", "Main": "MAIN", "Advanced": "ADV",
+             "Invite": "INVITE"}
 
-
-div = "MAIN"
-run_tool.run_tool(div)
+run_tool.run_tool(divs_dict['Main'])
