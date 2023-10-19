@@ -1,6 +1,5 @@
 import requests, json
 
-logs_tf_api_key = "76561198013747901#743f3a5b51eb2da7"
 
 
 def get_logs_data(logs_url):
