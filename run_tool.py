@@ -47,8 +47,6 @@ def run_tool(div):
         print("Finished to grabbing info for team: " + team + "\n")
         print("Current Progress is " + str(counter) + "/" + str(len(Season_16_Teams)))
         counter= counter + 1
-        if team =="Ceviche de tiburon":
-            break
 
 
     csv_writer.write_csv_files(teams)
